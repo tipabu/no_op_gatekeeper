@@ -1,4 +1,4 @@
-# Copyright (c) 2019 Tim Burke
+# Copyright (c) 2019-2020 Tim Burke
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,6 +24,12 @@ def filter_factory(global_conf, **local_conf):
         if not no_log:
             logger = utils.get_logger(conf)
             logger.warning("Using INSECURE, DANGEROUS no-op gatekeeper!")
-        return app
+
+        def new_app(env, start_response):
+            env['swift_owner'] = True
+            env['reseller_request'] = True
+            return app(env, start_response)
+
+        return new_app
 
     return filter

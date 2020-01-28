@@ -1,4 +1,4 @@
-# Copyright (c) 2019 Tim Burke
+# Copyright (c) 2019-2020 Tim Burke
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@ setuptools.setup(
     author="Tim Burke",
     author_email="tim.burke@gmail.com",
     url="https://github.com/tipabu/no-op-gatekeeper",
-    version="1.0",
+    version="1.1",
     description="An insecure no-op gatekeeper for OpenStack Swift",
     long_description="""
 No-op Gatekeeper
