@@ -20,7 +20,7 @@ setuptools.setup(
     author="Tim Burke",
     author_email="tim.burke@gmail.com",
     url="https://github.com/tipabu/no-op-gatekeeper",
-    version="1.1",
+    version="1.2",
     description="An insecure no-op gatekeeper for OpenStack Swift",
     long_description="""
 No-op Gatekeeper

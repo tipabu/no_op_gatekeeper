@@ -28,6 +28,8 @@ def filter_factory(global_conf, **local_conf):
         def new_app(env, start_response):
             env['swift_owner'] = True
             env['reseller_request'] = True
+            env.setdefault('HTTP_X_BACKEND_ALLOW_RESERVED_NAMES', 'True')
+            env.setdefault('HTTP_X_BACKEND_ALLOW_PRIVATE_METHODS', 'True')
             return app(env, start_response)
 
         return new_app
